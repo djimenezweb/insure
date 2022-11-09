@@ -1,0 +1,31 @@
+.button {
+    padding: 12px 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    &--white {
+        color: black;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--very-dark-violet);
+            background-color: white;
+        }
+
+        &--white:hover {
+            color: white;
+            background-color: var(--very-dark-violet);
+        }
+    }
+}
+
+.menu--show .button--white {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 14px 100px;
+}

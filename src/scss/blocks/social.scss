@@ -1,0 +1,13 @@
+.social {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    color: var(--dark-grayish-violet);
+    font-size: 24px;
+
+    @media (hover: hover) {
+        &__link:hover {
+            color: var(--very-dark-violet);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use '../mixins/responsive.scss' as*;
+
+.text {
+    color: var(--dark-grayish-violet);
+    line-height: 1.5;
+    text-align: center;
+
+    @include responsive(desktop) {
+        text-align: left;
+    }
+}

@@ -1,0 +1,62 @@
+@use '../mixins/responsive.scss' as*;
+@use '../functions/image.scss' as *;
+
+.menu {
+    display: none;
+
+    @include responsive(desktop) {
+        width: 450px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        color: white;
+
+        @include responsive(desktop) {
+            color: var(--dark-grayish-violet);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+    }
+
+    @media (hover: hover) {
+        @include responsive(desktop) {
+            &__link:hover {
+                color: var(--very-dark-violet);
+            }
+        }
+    }
+}
+
+.menu-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    @include responsive(desktop) {
+        display: none;
+    }
+}
+
+.menu--show {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.8rem;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    z-index: 1;
+    height: 600px;
+    width: 100vw;
+    background-color: var(--very-dark-violet);
+    background-image: image("bg-pattern-mobile-nav.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-size: 1.2rem;
+    font-weight: 700;
+}

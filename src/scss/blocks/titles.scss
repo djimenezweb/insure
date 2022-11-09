@@ -1,0 +1,64 @@
+@use '../mixins/responsive.scss' as*;
+
+h1,
+h2,
+h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.main-title {
+    font-size: 3rem;
+
+    @include responsive(desktop) {
+        font-size: 4.6rem;
+        line-height: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            width: 150px;
+            height: 1px;
+            background-color: white;
+        }
+    }
+}
+
+.article__title {
+    font-size: 3rem;
+    color: var(--very-dark-violet);
+    margin-bottom: 5.5rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: calc(50vw - 75px);
+        width: 150px;
+        height: 1px;
+        background-color: var(--dark-grayish-violet);
+    }
+
+    @include responsive(desktop) {
+        font-size: 4.4rem;
+
+        &::before {
+            top: -60px;
+            left: 10rem;
+        }
+    }
+}
+
+.card__title {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 1;
+
+    @include responsive(desktop) {
+        text-align: left;
+        font-size: 3.5rem;
+        max-width: 500px;
+    }
+}

@@ -1,0 +1,77 @@
+@use '../mixins/responsive.scss' as*;
+@use '../functions/image.scss' as*;
+
+.footer {
+    background-color: var(--very-light-gray);
+    background-image: image("bg-pattern-footer-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top left;
+    height: 64rem;
+
+    @include responsive(desktop) {
+        height: 390px;
+        padding: 0 10rem;
+        background-image: image("bg-pattern-footer-desktop.svg");
+    }
+}
+
+.footer__top {
+    height: 15rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    @include responsive(desktop) {
+        height: 10rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        background-color: hsl(0, 0%, 85%);
+        bottom: 2.5rem;
+
+        @include responsive(desktop) {
+            width: 100%;
+            bottom: 2rem;
+        }
+    }
+
+}
+
+.footer__menus {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 2;
+    color: var(--very-dark-violet);
+    text-align: center;
+
+    @include responsive(desktop) {
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+        text-align: left;
+    }
+}
+
+.footer__menu {
+    margin-bottom: 2.5rem;
+}
+
+footer li:first-child {
+    color: var(--dark-grayish-violet);
+    padding-bottom: 18px;
+}
+
+@media (hover: hover) {
+    .footer__link:hover {
+        text-decoration: underline;
+    }
+}

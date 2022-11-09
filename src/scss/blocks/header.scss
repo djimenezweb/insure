@@ -1,0 +1,89 @@
+@use '../mixins/responsive.scss' as*;
+
+.header {
+    margin-bottom: 175px;
+
+    @include responsive(desktop) {
+        margin-bottom: 375px;
+    }
+
+    &__top {
+        position: relative;
+        padding: 30px 24px;
+
+        @include responsive(desktop) {
+            padding: 0 10rem;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__bottom {
+        height: 950px;
+        padding: 0;
+        position: relative;
+        background-color: var(--dark-violet);
+
+        @include responsive(desktop) {
+            height: 600px;
+            padding: 0 10rem;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__info {
+        color: white;
+        position: relative;
+        text-align: center;
+        padding: 6rem 20px 0;
+
+        @include responsive(desktop) {
+            padding: 0;
+            max-width: 550px;
+            text-align: left;
+        }
+    }
+
+    &__text {
+        line-height: 1.5;
+        margin-bottom: 3rem;
+    }
+
+    &__pic {
+        @include responsive(desktop) {
+            position: relative;
+            top: 130px;
+        }
+    }
+}
+
+.bg-pattern-left {
+    position: absolute;
+    bottom: 333px;
+
+    @include responsive(desktop) {
+        bottom: -333px;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.bg-pattern-right {
+    position: absolute;
+    bottom: -180px;
+    right: 0;
+    z-index: 1;
+
+    @include responsive(desktop) {
+        width: 430px;
+        height: 510px;
+        object-fit: cover;
+        object-position: bottom;
+        top: 0;
+    }
+}

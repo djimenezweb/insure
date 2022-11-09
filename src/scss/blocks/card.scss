@@ -1,0 +1,26 @@
+@use '../mixins/responsive.scss' as*;
+@use '../functions/image.scss' as*;
+
+.card {
+    background-color: var(--dark-violet);
+    background-image: image("bg-pattern-how-we-work-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    color: white;
+    margin: 0 22px 10rem 22px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    @include responsive(desktop) {
+        background-image: image("bg-pattern-how-we-work-desktop.svg");
+        margin: 0 10rem 150px 10rem;
+        height: 250px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 80px;
+    }
+}
